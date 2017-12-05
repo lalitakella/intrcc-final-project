@@ -20,7 +20,7 @@ public class Main extends Work{
 			}
 			else if(a == 3){
 				TotalGrade();
-				
+				weightedGrades.clear();
 			}
 			else if(a == 4){
 				GPAScale();
@@ -31,8 +31,5 @@ public class Main extends Work{
 				System.out.println("Invalid input:");
 			}
 		}
-
-
 	}
-
 }

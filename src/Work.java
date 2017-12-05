@@ -59,6 +59,7 @@ public class Work {
 		public static String GPAScale(){ //decides numerical GPA value
 			System.out.println("Enter alphabetical grade for  your class:");
 			gpa = input.nextLine();
+			gpa.toUpperCase();
 			if (gpa == ("A")){
 			    GPA= 4.00;}
 			  else if (gpa ==("A-")){
