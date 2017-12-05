@@ -1,19 +1,24 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+
 public class Work {
-		double grade;
-		double weight;
-		double weightedGrade;
-		double totalGrade;
-		double GPA;
-		char a;
-		String gpa;
-		String response;
-		Scanner in = new Scanner(System.in);
-		ArrayList<Double> weightedGrades = new ArrayList<Double>();
-		public String GradeScale(){ // decides numerical grade value
+		
+		static double grade;
+		static double weight;
+		static double weightedGrade;
+		static double totalGrade;
+		static double GPA;
+		static char a;
+		static String gpa;
+		static String response;
+		
+		public static Scanner input = new Scanner(System.in);
+		
+		static ArrayList<Double> weightedGrades = new ArrayList<Double>();
+		
+		public static String GradeScale(){ // decides numerical grade value
 			System.out.println("Enter numerical grade to be converted into letter grade:");
-			grade = in.nextDouble();
+			grade = input.nextDouble();
 			if(grade >= 90){
 				a = 'A';
 			} 
@@ -32,27 +37,28 @@ public class Work {
 			response = "Your letter grade is ";
 			return response + a + ".";
 		}
-		public String WeightedGrade(){ //multiplies grade with weight and divides by 100 to add weighted grade to arraylist
+		
+		public static String WeightedGrade(){ //multiplies grade with weight and divides by 100 to add weighted grade to arraylist
 			System.out.println("Enter weight of grade in decimal form (i.e. 10% = 0.1):");
-			weight = in.nextDouble();
+			weight = input.nextDouble();
 			System.out.println("Enter unweighted grade:");
-			grade = in.nextDouble();
+			grade = input.nextDouble();
 			weightedGrade = (weight * grade) / 100;
 			weightedGrades.addAll(weightedGrades);
 			response = "Your weighted grade is ";
 			return response + weightedGrade + ".";
 		}
-		public String TotalGrade(){ //sums all weighted grades
+		public static String TotalGrade(){ //sums all weighted grades
 			for(int i = 0; i < weightedGrades.size(); i++){
 				totalGrade += i;
 			}
 			response = "Your total grade is ";
 			return response + totalGrade + ".";
-			weightedGrades.clear();
+			
 		}
-		public String GPAScale(){ //decides numerical GPA value
+		public static String GPAScale(){ //decides numerical GPA value
 			System.out.println("Enter alphabetical grade for  your class:");
-			gpa = in.nextLine();
+			gpa = input.nextLine();
 			if (gpa == ("A")){
 			    GPA= 4.00;}
 			  else if (gpa ==("A-")){
@@ -76,6 +82,4 @@ public class Work {
 			response = "Your GPA is ";
 			return response + GPA + ".";
 		}
-
-
 }

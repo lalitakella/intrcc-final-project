@@ -1,5 +1,5 @@
 
-public class Main {
+public class Main extends Work{
 
 	public static void main(String[] args) {
 		int a  = 0;	
@@ -11,7 +11,7 @@ public class Main {
 			System.out.println("3. Return sum of all weighted grades inputted. (Also clears all grades to recalculate with new values for new class)");
 			System.out.println("4. Convert letter grade into value on 4.0 GPA scale.");
 			System.out.println("5. Exit program.");
-			a = in.nextInt();
+			a = input.nextInt();
 			if(a == 1){
 				GradeScale();
 			} 
@@ -20,6 +20,7 @@ public class Main {
 			}
 			else if(a == 3){
 				TotalGrade();
+				
 			}
 			else if(a == 4){
 				GPAScale();
