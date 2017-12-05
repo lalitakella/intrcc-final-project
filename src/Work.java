@@ -41,17 +41,19 @@ public class Work {
 		public static String WeightedGrade(){ //multiplies grade with weight and divides by 100 to add weighted grade to arraylist
 			System.out.println("Enter weight of grade in decimal form (i.e. 10% = 0.1):");
 			weight = input.nextDouble();
+			totalGrade = 0;
 			System.out.println("Enter unweighted grade:");
 			grade = input.nextDouble();
 			weightedGrade = (weight * grade) / 100;
-			weightedGrades.addAll(weightedGrades);
+			weightedGrades.add(weightedGrade);
 			response = "Your weighted grade is ";
 			return response + weightedGrade + ".";
 		}
 		public static String TotalGrade(){ //sums all weighted grades
 			for(int i = 0; i < weightedGrades.size(); i++){
-				totalGrade += i;
+				totalGrade += weightedGrades.get(i);
 			}
+			weightedGrades.clear();
 			response = "Your total grade is ";
 			return response + totalGrade + ".";
 			
@@ -59,26 +61,26 @@ public class Work {
 		public static String GPAScale(){ //decides numerical GPA value
 			System.out.println("Enter alphabetical grade for  your class:");
 			gpa = input.nextLine();
-			gpa.toUpperCase();
-			if (gpa == ("A")){
+			gpa = gpa.toUpperCase();
+			if (gpa.equals("A")){
 			    GPA= 4.00;}
-			  else if (gpa ==("A-")){
+			  else if (gpa.equals("A-")){
 			    GPA = 3.67;}
-			  else if (gpa ==("B+")){
+			  else if (gpa.equals("B+")){
 			    GPA = 3.33;}
-			  else if (gpa ==("B")){
+			  else if (gpa.equals("B")){
 			   GPA = 3.00;}
-			  else if (gpa == ("B-")){
+			  else if (gpa.equals("B-")){
 			    GPA = 2.67;}
-			  else if (gpa ==("C+")){
+			  else if (gpa.equals("C+")){
 			    GPA = 2.33;}
-			  else if (gpa ==("C")){
+			  else if (gpa.equals("C")){
 			   GPA = 2.00;}
-			  else if (gpa == ("D+")){
+			  else if (gpa.equals("D+")){
 			 GPA = 1.33;}
-			  else if (gpa ==("D")){
+			  else if (gpa.equals("D")){
 			    GPA = 1.00;}
-			  else if (gpa == ("F")){
+			  else if (gpa.equals("F")){
 			    GPA = 0;}
 			response = "Your GPA is ";
 			return response + GPA + ".";

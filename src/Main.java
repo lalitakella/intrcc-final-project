@@ -12,18 +12,18 @@ public class Main extends Work{
 			System.out.println("4. Convert letter grade into value on 4.0 GPA scale.");
 			System.out.println("5. Exit program.");
 			a = input.nextInt();
+			input.nextLine();
 			if(a == 1){
-				GradeScale();
+				System.out.println(GradeScale());
 			} 
 			else if(a == 2){
-				WeightedGrade();
+				System.out.println(WeightedGrade());
 			}
 			else if(a == 3){
-				TotalGrade();
-				weightedGrades.clear();
+				System.out.println(TotalGrade());
 			}
 			else if(a == 4){
-				GPAScale();
+				System.out.println(GPAScale());
 			}
 			else if(a == 5){
 				a = 5;
